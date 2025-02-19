@@ -4,7 +4,6 @@
   box-sizing: border-box;
   font-family: "Poppins", serif;
   background: whitesmoke;
-  /* overflow-x: hidden; */
 }
 
 body {
@@ -27,8 +26,10 @@ header>.left button,
 .transitioningImages,
 .grid,
 .card,
+.anotherGrid,
 .Luxuries,
 .holidayCards,
+.navGrid,
 .container {
   display: grid;
   grid-auto-flow: column;
@@ -47,7 +48,7 @@ header {
   font-family: monospace;
   align-items: center;
   z-index: 10000;
-
+  border-bottom: 1px solid gray;
 }
 
 header>.left {
@@ -71,13 +72,6 @@ button {
   border: none;
   width: 100%;
   background: whitesmoke;
-}
-
-.navigations> :hover {
-  background: orange;
-  border-radius: 5px;
-  transition: background 1s .1s linear;
-
 }
 
 button:hover {
@@ -139,7 +133,21 @@ h1 {
   height: 3rem;
   border-radius: 10px;
   margin: 1rem 0rem;
+  gap: 1rem;
 }
+
+.navigations>button {
+  border: 1px solid orange;
+  border-radius: 5px;
+  transition: background .25s ease-in-out, transform .25s ease-in-out;
+}
+
+.navigations>button:hover {
+  background: orange;
+  border-radius: 5px;
+  transform: scale(1.1);
+}
+
 
 .newimages,
 .holidayCards {
@@ -150,14 +158,19 @@ h1 {
   width: 1295px;
 }
 
-.newimages>div:hover {
-  animation: cardHover .6s ease-in-out;
+.newimages>div,
+.images>img {
+  transition: transform 0.25s ease-in-out;
+}
+
+.newimages>div:hover,
+.images>img:hover {
+  transform: scale(.98);
 }
 
 .newimages>div>:nth-child(2) {
   color: gray;
   font-size: 15px;
-  font-family: "Poppins", serif;
   font-weight: 300;
   margin-left: .3rem;
   margin-top: 1.5rem;
@@ -185,11 +198,12 @@ h1 {
   border-radius: 50%;
   border: 1px solid gray;
   cursor: pointer;
+  transition: background .25s ease-in-out, transform 0.25s ease-in-out;
 }
 
 .transitioningImages>*:hover {
   background: orange;
-  transition: background .5s ease-in-out;
+  transform: scale(1.2);
 }
 
 .card>img {
@@ -219,11 +233,12 @@ h1 {
   padding: .2rem .7rem;
   width: fit-content;
   margin-bottom: .8rem;
+  transition: background .25s ease-in-out, transform .25s ease-in-out;
 }
 
 .tag:hover {
   background: orange;
-  transition: background .5s ease-in-out;
+  transform: scale(1.09);
   cursor: pointer;
 }
 
@@ -250,15 +265,8 @@ h3 {
 
 .viewAll {
   width: 10rem;
-  text-align: start;
 }
 
-@keyframes cardHover {
-  50% {
-    scale: .98;
-  }
-
-  100% {
-    scale: 1;
-  }
+.anotherGrid {
+  grid-template-columns: repeat(2, 1fr);
 }
