@@ -1,0 +1,264 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", serif;
+  background: whitesmoke;
+  /* overflow-x: hidden; */
+}
+
+body {
+  padding: 0px 1rem;
+  overflow: hidden;
+  margin: 0px 6rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+header,
+header>.left,
+header>.right,
+header>.left button,
+.rightSideLeftBtn,
+.rightSideRightBtn,
+.navigations,
+.newimages,
+.images,
+.transitioningImages,
+.grid,
+.card,
+.Luxuries,
+.holidayCards,
+.container {
+  display: grid;
+  grid-auto-flow: column;
+  height: fit-content;
+}
+
+header {
+  background-color: whitesmoke;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  height: fit-content;
+  position: fixed;
+  width: 100vw;
+  left: 0;
+  padding: 0px 3rem 0px 3rem;
+  font-family: monospace;
+  align-items: center;
+  z-index: 10000;
+
+}
+
+header>.left {
+  gap: 2rem;
+  justify-items: center;
+  align-items: center;
+}
+
+header>.right {
+  gap: 2rem;
+  height: 100%;
+  align-items: center;
+  border: none;
+}
+
+img {
+  -webkit-user-drag: none;
+}
+
+button {
+  border: none;
+  width: 100%;
+  background: whitesmoke;
+}
+
+.navigations> :hover {
+  background: orange;
+  border-radius: 5px;
+  transition: background 1s .1s linear;
+
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+header>.left button {
+  align-items: center;
+  gap: .2rem;
+}
+
+.logo {
+  height: 4rem;
+}
+
+.rightSideLeftBtn,
+.rightSideRightBtn {
+  gap: .3rem;
+}
+
+.exploreTopDestinationsByRegion>h1 {
+  padding-top: 5rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.packagesByInterestInCategory>h1 {
+  margin: 3rem 0;
+}
+
+.images {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+.images>*:hover {
+  animation: cardHover .6s ease-in-out;
+}
+
+.bigimage {
+  grid-column: span 2;
+  grid-row: span 2;
+  height: 100%;
+}
+
+.images>img,
+.newimages>div,
+.newimages>div>img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.navigations {
+  width: 40vw;
+  height: 3rem;
+  border-radius: 10px;
+  margin: 1rem 0rem;
+}
+
+.newimages,
+.holidayCards {
+  grid-template-columns: repeat(12, 15rem);
+  width: 200vw;
+  gap: 1.5rem;
+  overflow: hidden;
+  width: 1295px;
+}
+
+.newimages>div:hover {
+  animation: cardHover .6s ease-in-out;
+}
+
+.newimages>div>:nth-child(2) {
+  color: gray;
+  font-size: 15px;
+  font-family: "Poppins", serif;
+  font-weight: 300;
+  margin-left: .3rem;
+  margin-top: 1.5rem;
+}
+
+.newimages>div>:nth-child(3) {
+  font-weight: 500;
+  margin-left: .3rem;
+}
+
+.container {
+  place-items: center;
+  margin: 2rem 0 2rem 0;
+}
+
+.transitioningImages {
+  gap: 1rem;
+  place-items: center;
+  width: fit-content;
+}
+
+.transitioningImages>* {
+  width: fit-content;
+  padding: 1rem;
+  border-radius: 50%;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+
+.transitioningImages>*:hover {
+  background: orange;
+  transition: background .5s ease-in-out;
+}
+
+.card>img {
+  height: 8rem;
+  width: 128px;
+  border-radius: 10px;
+}
+
+.grid {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.card {
+  overflow: hidden;
+  height: 100%;
+  align-items: center;
+  gap: .5rem;
+  padding: 0px .3rem;
+}
+
+.tag {
+  border: 1px solid orange;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: .2rem .7rem;
+  width: fit-content;
+  margin-bottom: .8rem;
+}
+
+.tag:hover {
+  background: orange;
+  transition: background .5s ease-in-out;
+  cursor: pointer;
+}
+
+h2,
+h3 {
+  font-weight: 300;
+}
+
+.card>* {
+  font-size: 11px;
+  font-weight: 300;
+}
+
+.Luxuries {
+  overflow: scroll;
+  margin-top: 4rem;
+}
+
+.behindImages {
+  max-height: 100vh;
+  max-width: calc(100vw - 15rem);
+  border-radius: 10px;
+}
+
+.viewAll {
+  width: 10rem;
+  text-align: start;
+}
+
+@keyframes cardHover {
+  50% {
+    scale: .98;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
